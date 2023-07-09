@@ -22,6 +22,8 @@ namespace HelloWorldWithDotNetNanoFramework
 {
     public class Program
     {
+        // Depending on the board/controller this can also be 13 or 4.
+        // See NanoFramework blinky app for more details.
         private const int GPIO_PIN_LED = 2;
 
         private static GpioController s_GpioController;
