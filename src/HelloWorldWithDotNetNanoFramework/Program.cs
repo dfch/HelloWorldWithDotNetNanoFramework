@@ -24,7 +24,10 @@ namespace HelloWorldWithDotNetNanoFramework
     {
         // Depending on the board/controller this can also be 13 or 4.
         // See NanoFramework blinky app for more details.
-        private const int GPIO_PIN_LED = 2;
+        // e.g.
+        // SparkThing Plus ESP32-WROOM-32E: 13
+        // ESP32-WROOM-32: 2
+        private const int GPIO_PIN_LED = 13;
 
         private static GpioController s_GpioController;
 
