@@ -16,14 +16,13 @@
 
 using System;
 
-namespace HelloWorldWithDotNetNanoFramework.MorseCode
-{
-    public class MorseCodeGeneratorConfiguration
-    {
-        public const ushort UnitLengthMsDefault = 150;
-        public ushort UnitLengthMs { get; init; } = UnitLengthMsDefault;
+namespace HelloWorldWithDotNetNanoFramework.MorseCode;
 
-        public Action Transmit { get; init; }
-        public Action NoTransmit { get; init; }
-    }
+public class MorseCodeGeneratorConfiguration
+{
+    public const ushort UnitLengthMsDefault = 150;
+    public ushort UnitLengthMs { get; init; } = UnitLengthMsDefault;
+
+    public Action Transmit { get; init; }
+    public Action NoTransmit { get; init; }
 }

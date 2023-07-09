@@ -15,6 +15,7 @@
     <RootNamespace>HelloWorldWithDotNetNanoFramework</RootNamespace>
     <AssemblyName>HelloWorldWithDotNetNanoFramework</AssemblyName>
     <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
+	<LangVersion>latest</LangVersion>
   </PropertyGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
   <ItemGroup>

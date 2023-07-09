@@ -13,12 +13,11 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-namespace HelloWorldWithDotNetNanoFramework.MorseCode
+namespace HelloWorldWithDotNetNanoFramework.MorseCode;
+
+public enum MorseCodeSignal : byte
 {
-    public enum MorseCodeSignal : byte
-    {
-        Off = 0,
-        Dit = 1,
-        Dah = 2,
-    }
+    Off = 0,
+    Dit = 1,
+    Dah = 2,
 }

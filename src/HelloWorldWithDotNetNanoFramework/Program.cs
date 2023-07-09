@@ -18,40 +18,39 @@ using System.Device.Gpio;
 using System.Diagnostics;
 using HelloWorldWithDotNetNanoFramework.MorseCode;
 
-namespace HelloWorldWithDotNetNanoFramework
+namespace HelloWorldWithDotNetNanoFramework;
+
+public class Program
 {
-    public class Program
+    // Depending on the board/controller this can also be 13 or 4.
+    // See NanoFramework blinky app for more details.
+    // e.g.
+    // SparkThing Plus ESP32-WROOM-32E: 13
+    // ESP32-WROOM-32: 2
+    private const int GPIO_PIN_LED = 13;
+
+    private static GpioController s_GpioController;
+
+    public static void Main()
     {
-        // Depending on the board/controller this can also be 13 or 4.
-        // See NanoFramework blinky app for more details.
-        // e.g.
-        // SparkThing Plus ESP32-WROOM-32E: 13
-        // ESP32-WROOM-32: 2
-        private const int GPIO_PIN_LED = 13;
+        s_GpioController = new GpioController();
 
-        private static GpioController s_GpioController;
+        var led = s_GpioController.OpenPin(GPIO_PIN_LED, PinMode.Output);
+        led.Write(PinValue.Low);
 
-        public static void Main()
+        var morseCode = new MorseCodeGenerator(new MorseCodeGeneratorConfiguration
         {
-            s_GpioController = new GpioController();
+            Transmit = () => led.Write(PinValue.High),
+            NoTransmit = () => led.Write(PinValue.Low),
+        });
 
-            var led = s_GpioController.OpenPin(GPIO_PIN_LED, PinMode.Output);
-            led.Write(PinValue.Low);
+        while (true)
+        {
+            var message = "Hello, world!";
 
-            var morseCode = new MorseCodeGenerator(new MorseCodeGeneratorConfiguration
-            {
-                Transmit = () => led.Write(PinValue.High),
-                NoTransmit = () => led.Write(PinValue.Low),
-            });
+            Debug.WriteLine(message);
 
-            while (true)
-            {
-                var message = "Hello, world!";
-
-                Debug.WriteLine(message);
-
-                morseCode.Generate(message);
-            }
+            morseCode.Generate(message);
         }
     }
 }

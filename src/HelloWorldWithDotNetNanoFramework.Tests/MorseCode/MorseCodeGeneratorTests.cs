@@ -17,24 +17,23 @@
 using HelloWorldWithDotNetNanoFramework.MorseCode;
 using nanoFramework.TestFramework;
 
-namespace HelloWorldWithDotNetNanoFramework.Tests.MorseCode
+namespace HelloWorldWithDotNetNanoFramework.Tests.MorseCode;
+
+[TestClass]
+public class MorseCodeGeneratorTests
 {
-    [TestClass]
-    public class MorseCodeGeneratorTests
+    [TestMethod]
+    public void SerialiseUpperCaseAndLowerCaseAreEqual()
     {
-        [TestMethod]
-        public void SerialiseUpperCaseAndLowerCaseAreEqual()
-        {
-            var upperCase = "ARBITRARY STRING";
-            var lowerCase = "arbitrary string";
+        var upperCase = "ARBITRARY STRING";
+        var lowerCase = "arbitrary string";
 
-            var cfg = new MorseCodeGeneratorConfiguration();
-            var sut = new MorseCodeGenerator(cfg);
+        var cfg = new MorseCodeGeneratorConfiguration();
+        var sut = new MorseCodeGenerator(cfg);
 
-            var result1 = sut.Serialise(upperCase);
-            var result2 = sut.Serialise(lowerCase);
+        var result1 = sut.Serialise(upperCase);
+        var result2 = sut.Serialise(lowerCase);
 
-            Assert.AreEqual(result1, result2);
-        }
+        Assert.AreEqual(result1, result2);
     }
 }
