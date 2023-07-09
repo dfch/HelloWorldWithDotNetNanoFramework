@@ -19,7 +19,7 @@ using System.Collections;
 using System.Diagnostics;
 using System.Threading;
 
-namespace HelloWorldWithDotNetNanoFramework
+namespace HelloWorldWithDotNetNanoFramework.MorseCode
 {
     public class MorseCodeGenerator
     {
@@ -114,7 +114,7 @@ namespace HelloWorldWithDotNetNanoFramework
             }
         }
 
-        private Array Serialise(string value)
+        public Array Serialise(string value)
         {
             const char SPACE = ' ';
 

@@ -14,12 +14,16 @@
 * limitations under the License.
 */
 
-namespace HelloWorldWithDotNetNanoFramework
+using System;
+
+namespace HelloWorldWithDotNetNanoFramework.MorseCode
 {
-    public enum MorseCodeSignal : byte
+    public class MorseCodeGeneratorConfiguration
     {
-        Off = 0,
-        Dit = 1,
-        Dah = 2,
+        public const ushort UnitLengthMsDefault = 150;
+        public ushort UnitLengthMs { get; init; } = UnitLengthMsDefault;
+
+        public Action Transmit { get; init; }
+        public Action NoTransmit { get; init; }
     }
 }

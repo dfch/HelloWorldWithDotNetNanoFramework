@@ -13,17 +13,12 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-
-using System;
-
-namespace HelloWorldWithDotNetNanoFramework
+namespace HelloWorldWithDotNetNanoFramework.MorseCode
 {
-    public class MorseCodeGeneratorConfiguration
+    public enum MorseCodeSignal : byte
     {
-        public const ushort UnitLengthMsDefault = 150;
-        public ushort UnitLengthMs { get; init; } = UnitLengthMsDefault;
-
-        public Action Transmit { get; init; }
-        public Action NoTransmit { get; init; }
+        Off = 0,
+        Dit = 1,
+        Dah = 2,
     }
 }

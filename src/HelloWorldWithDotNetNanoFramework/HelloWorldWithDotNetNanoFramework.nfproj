@@ -18,9 +18,9 @@
   </PropertyGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
   <ItemGroup>
-    <Compile Include="MorseCodeGenerator.cs" />
-    <Compile Include="MorseCodeGeneratorConfiguration.cs" />
-    <Compile Include="HelloWorldWithDotNetNanoFramework.cs" />
+    <Compile Include="MorseCode\MorseCodeGenerator.cs" />
+    <Compile Include="MorseCode\MorseCodeGeneratorConfiguration.cs" />
+    <Compile Include="MorseCode\MorseCodeSignal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

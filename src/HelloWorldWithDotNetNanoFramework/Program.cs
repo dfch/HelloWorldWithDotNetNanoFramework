@@ -16,6 +16,7 @@
 
 using System.Device.Gpio;
 using System.Diagnostics;
+using HelloWorldWithDotNetNanoFramework.MorseCode;
 
 namespace HelloWorldWithDotNetNanoFramework
 {
